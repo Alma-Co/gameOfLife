@@ -3,7 +3,6 @@ let deadNeighbours , aliveNeighbours;
 let time = 1;
 let interval;
 
-
 gameOfLife.setState = function() {
     for(let y= 0; y < gameOfLife.board.length; y++) {
         for(let x= 0; x < gameOfLife.board[y].length; x++) {
@@ -36,7 +35,6 @@ gameOfLife.startTimer = function() {
 	}, time);
 }
 
-
 gameOfLife.startGame = function() {
 
     let lessSpeed = document.getElementById("lessSpeedBtn") 
@@ -48,10 +46,6 @@ gameOfLife.startGame = function() {
 
 gameOfLife.stop = function() {
     clearTimeout(interval)
-}
-
-gameOfLife.setTime = function() {
-    
 }
 
 
@@ -104,9 +98,6 @@ gameOfLife.printBoard = function() {
     tbl.setAttribute("border", "0");
 }
 
-
-
-
 gameOfLife.getNeighbours = function(y, x) {   
     let neighbours = [
         {position: "TOP_LEFT", x: x-1, y: y-1},
@@ -138,7 +129,6 @@ gameOfLife.generate = function() {
 }
 
 window.addEventListener('resize', gameOfLife.generate );
-
 
 gameOfLife.generate();
 gameOfLife.printBoard();
